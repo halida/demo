@@ -14,7 +14,7 @@
   </head>
   <body>
     <style>
-      #data_grid span.day{display: inline-block; width: 20px; height: 18px; text-align: center; padding: 3px; border: 1px solid #ccc; margin: 0 4px 4px 0; cursor: pointer;}
+      #data_grid span.day{display: inline-block; width: 30px; height: 18px; text-align: center; padding: 3px; border: 1px solid #ccc; margin: 0 4px 4px 0; cursor: pointer;}
       #data_grid .month{font-size: 16px}
     </style>
     <div class="wrapper">
@@ -27,20 +27,24 @@
       <h2>How weeks are calculated</h2>
 
       <p>
-        <!-- Coverage Inception Date -->
-        <!-- <input type="text" value="06/19/2016" id="tx_inception"></input> -->
-        <!-- <br/> -->
-        Billing Date
+        Coverage Inception Date
         <br/>
-        <input type="text" value="04/30/2017" id="tx_billing"></input>
+        <input type="text" value="06/19/2016" id="tx_inception"></input>
         <br/>
         Coverage Expiration Date
         <br/>
         <input type="text" value="06/19/2017" id="tx_expiration"></input>
         <br/>
+        Billing Date
+        <br/>
+        <input type="text" value="04/30/2017" id="tx_billing"></input>
+        <br/>
         <input type="button" value="Submit" onclick="run();">
       </p>
-      There are <span id="weeks"></span> weeks:
+      There are total <span id="total_weeks"></span> billing weeks, remain <span id="remain_weeks"></span> weeks,
+      List current period number/remaining weeks for each day:
+      <br/>
+      (peroid number == 0 means this week don't have bill, because previous coverage may already billed this week)
       <div id="data_grid"></div>
       </section>
       <footer>
